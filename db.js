@@ -4,7 +4,7 @@ const pool = mysql.createPool({
   host: 'mysql-10c77f66-emman199810-8ec7.l.aivencloud.com',
   port:'19417',
   user: 'avnadmin',
-  password:'AVNS_6JwxnghvxWxLwO8P7bI',
+  password:process.env.DB_PASSWORD,
   database: 'defaultdb',
   waitForConnections: true,
   connectionLimit: 10,
