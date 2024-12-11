@@ -24,7 +24,7 @@ exports.register = async(req, res)=>{
         );
 
         if (result[0].affectedRows > 0) {
-            res.status(200).json({ message: 'User registered successfully' });
+            res.status(200).json({ message: 'User registered successfully',user_id:result[0].insertId });
         } else {
             res.status(500).json({ error: 'Failed to register user' });
         }
