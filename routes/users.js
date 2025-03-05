@@ -29,7 +29,7 @@ router.get('/data',async(req, res)=>{
     u.last_name AS lastName,
     u.birth_date AS birthday,
     u.gender,
-    u.email from health_data hd INNER JOIN users u USING(user_id) WHERE u.user_id = ?`,[user_id]);
+    u.email from users u LEFT OUTER JOIN health_data hd USING(user_id) WHERE u.user_id = ?`,[user_id]);
 
 const healthData = healthFetch[0];
 
